@@ -1,7 +1,26 @@
 package com.example.demo.resolver;
 
+import com.example.demo.model.Article;
+import com.example.demo.repository.ArticleRepository;
+import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Repository;
+import org.springframework.graphql.data.method.annotation.Argument;
+import org.springframework.graphql.data.method.annotation.MutationMapping;
+import org.springframework.graphql.data.method.annotation.QueryMapping;
+import org.springframework.transaction.annotation.Transactional;
+import org.springframework.stereotype.Controller;
+
+import java.util.List;
+
+@Controller  // Add this annotation
+@Component
+@Transactional
 public class ArticleResolver {
-    private ArticleRepository articleRepo;
+    private final ArticleRepository articleRepo;
+
+    public ArticleResolver(ArticleRepository articleRepo) {
+        this.articleRepo = articleRepo;
+    }
     
     @QueryMapping
     public List<Article> articles() {
