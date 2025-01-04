@@ -28,7 +28,6 @@ public class UserResolver {
     @QueryMapping
     public List<User> users() {
         List<User> users = userRepo.findAll();
-        System.out.println("Fetched users count: " + users.size());
         users.forEach(user -> System.out.println("User found: " + user.getName()));
         return users;
     }

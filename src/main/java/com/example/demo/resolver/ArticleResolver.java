@@ -12,7 +12,7 @@ import org.springframework.stereotype.Controller;
 
 import java.util.List;
 
-@Controller  // Add this annotation
+@Controller
 @Component
 @Transactional
 public class ArticleResolver {
