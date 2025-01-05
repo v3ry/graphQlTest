@@ -28,6 +28,8 @@ public class User {
     @Column(name = "role")
     private Set<String> roles;
 
+    // Getters and Setters
+
     public Long getId() {
         return id;
     }
@@ -67,4 +69,6 @@ public class User {
     public void setRoles(Set<String> roles) {
         this.roles = roles;
     }
+
+    // Optionnel : Exclure le password des sérialisations (si vous utilisez des annotations comme @JsonIgnore)
 }
