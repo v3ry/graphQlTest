@@ -1,0 +1,24 @@
+<div class="register-form">
+  <h2>Register</h2>
+  <form (ngSubmit)="onSubmit()">
+    <div>
+        <label for="name">Name</label>
+        <input id="name" [(ngModel)]="name" name="name" required />
+      </div>
+    <div>
+      <label for="email">Email</label>
+      <input type="email" id="email" [(ngModel)]="email" name="email" required />
+    </div>
+    <div>
+      <label for="password">Password</label>
+      <input type="password" id="password" [(ngModel)]="password" name="password" required />
+    </div>
+    <button type="submit" [disabled]="loading">
+      {{ loading ? 'Loading...' : 'Register' }}
+    </button>
+    <!-- Utilisation correcte de @if -->
+    @if (error) {
+      <p class="error">{{ error }}</p>
+    }
+  </form>
+</div>
